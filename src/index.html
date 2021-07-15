@@ -4,17 +4,92 @@
     <head>
         <meta charset="utf-8">
         <title>Website Time Analyzer</title>
+        <link href="style/chart.css" rel="stylesheet">
+        <link href="style/webact.css" rel="stylesheet">
     </head>
 
     <body>
+        
         <div id="title">
             <p class="title">Website Time Analyzer</p>
         </div>
+        
         <div id="buttons" class="btn-block">
             <a class="active" id="Today_btn">Today</a>
             <a class="All_btn">All Time</a>
             <a class="Days_btn">Days</a>
-            <a class="settins">Settings</a>
+            <a class="settings">Settings</a>
         </div>
+
+        <div id="stats" class="hide">
+            
+            <p class="table-header" >Overall Statistics</p>
+            
+            <div id="statsblock">
+                <div class="title">
+                    <div class="additional">
+                        <div class="summary">First Day</div>
+                        <div id="first_stat" class="value"></div>
+                    </div>
+
+                    <div class="additional">
+                        <div class="summary">Active Days</div>
+                        <div id="active_stat" class="value"></div>
+                    </div>
+
+                    <div class="additional">
+                        <div class="summary">Total Days</div>
+                        <div id="total_stat" class="value"></div>
+                    </div>
+                </div>
+
+                <div class="title">
+                    <div class="additional">
+                        <div class="summary">Today</div>
+                        <div id="today_stat" class="stime"></div>
+                    </div>
+
+                    <div class="additional">
+                        <div class="summary">All Time</div>
+                        <div id="all_time_stat" class="stime"></div>
+                    </div>
+
+                    <div class="additional">
+                        <div class="summary">Average</div>
+                        <div id="average_stat" class="stime"></div>
+                    </div>
+                </div>
+
+                <div class="title">
+                    <div class="block">
+                        <div class="summary">Most Active Day</div>
+                        <div class="inline-block">
+                            <div class="value" id="most_active_stat"></div>
+                            <div class="stime" id="most_active_day_time"></div>
+                            <div class="value hide" id="most_active_stat_without_current"></div>
+                            <div class="stime hide" id="most_active_day_time_without_current"></div>
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="chart_block">
+            <a class="button active chart-btn chart-btn-donut" id="donut_chart">Common Chart</div>
+            <a class="button chart-btn chart-btn-heatmap">Time Chart</a>
+        </div>
+
+        <div class="chart"></div>
+        
+        <div id="time_interval_label" class="warning hide">
+            <label>Only time intervals greater than 3 seconds are visible</label>
+        </div>
+
+        <div id="timeChart"></div>
+        <div id="resultTable" class="list-of-site"></div>
+        <div id="total" class="inline-flex"></div>
+        <div id="byDays" class="calender-block"></div>
+
     </body>
 </html>
